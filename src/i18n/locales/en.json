@@ -28,46 +28,49 @@
       "Royal Hotel"
     ]
   },
-  "features": {
-    "badge": "Our Products",
-    "title": "ENS Digital Menu",
-    "description": "ENS delivers smart QR-based digital menu solutions with ordering and payment features to provide the best possible customer experience.",
-    "cta": "Try the digital menu now",
-    "items": [
-      {
-        "title": "Brand Customization",
-        "description": "Customize colors, logo, and cover design, and connect your digital menu to your social media accounts."
-      },
-      {
-        "title": "Advanced Reports & Analytics",
-        "description": "Get accurate data and reports to understand your business performance and identify growth opportunities."
-      },
-      {
-        "title": "Payment Processing",
-        "description": "Receive orders and payments easily by integrating the digital menu with your POS system."
-      },
-      {
-        "title": "Easy Dashboard",
-        "description": "Manage orders, branches, and real-time updates through a simple and flexible dashboard."
-      },
-      {
-        "title": "Independent Branch Control",
-        "description": "Control each branch separately, manage items, and track sales with ease."
-      },
-      {
-        "title": "Increase Profits",
-        "description": "Reduce reliance on costly delivery apps and receive orders directly with zero commissions."
-      },
-      {
-        "title": "24/7 Support",
-        "description": "Our support team is available around the clock to help whenever you need it."
-      },
-      {
-        "title": "Multi-language Support",
-        "description": "Translate your menu into multiple languages to serve customers from different nationalities."
-      }
-    ]
-  },
+ "features": {
+  "badge": "Our Products",
+  "title": "Features of",
+  "titleHighlight": "ENS",
+  "titleEnd": "Digital Menu",
+  "description": "ENS provides the best digital menu solutions through QR codes, allowing you to receive orders and payments from your customers while delivering the best possible experience.",
+  "cta": "Try the digital menu now",
+  "items": [
+    {
+      "title": "Custom Branding",
+      "description": "Design your digital presence by changing colors, logos, and cover images, and link the digital menu to your social media accounts."
+    },
+    {
+      "title": "Advanced Reports & Analytics",
+      "description": "Get accurate data and reports that help you understand your business performance and identify opportunities for improvement."
+    },
+    {
+      "title": "Payment Processing",
+      "description": "Receive orders and payments easily by connecting your digital menu to your POS system for a smooth and fast experience."
+    },
+    {
+      "title": "Easy Control Panel",
+      "description": "Manage orders, branches, and real-time updates through a simple and flexible interface, with the ability to add multiple users."
+    },
+    {
+      "title": "Independent Branch Management",
+      "description": "Control each branch separately, add or edit products freely, and track sales easily."
+    },
+    {
+      "title": "Increase Revenue",
+      "description": "Reduce reliance on costly delivery apps and receive orders directly through your own platform without commissions."
+    },
+    {
+      "title": "24/7 Technical Support",
+      "description": "We provide continuous technical support around the clock to ensure you get help whenever you need it."
+    },
+    {
+      "title": "Multi-Language Support",
+      "description": "Translate the menu into multiple languages to serve all your customers from different nationalities."
+    }
+  ]
+},
+
   "whyUs": {
     "title": "Why choose ENS?",
     "items": [
@@ -173,5 +176,19 @@
     "copyright": "All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms & Conditions"
+  },
+  "login": {
+    "title": "Login",
+    "subtitle": "Welcome to your dashboard",
+    "email": "Email",
+    "emailPlaceholder": "Enter your email",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot password?",
+    "loginButton": "Login",
+    "noAccount": "Don't have an account?",
+    "createAccount": "Create a new account",
+    "backToHome": "Back to Home"
   }
 }

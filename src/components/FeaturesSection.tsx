@@ -30,8 +30,8 @@ const FeaturesSection = () => {
           <span className="inline-block px-4 py-2 bg-accent text-accent-foreground rounded-full text-sm font-medium mb-4 animate-bounce-in" suppressHydrationWarning>
             {t("features.badge")}
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 animate-slide-up" suppressHydrationWarning>
-            {t("features.title")} <span className="text-gradient">{t("features.titleHighlight")}</span> {t("features.titleEnd")}
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 animate-slide-up">
+            <span suppressHydrationWarning>{t("features.title")}</span> <span className="text-gradient" suppressHydrationWarning>{t("features.titleHighlight")}</span> <span suppressHydrationWarning>{t("features.titleEnd")}</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto animate-slide-up" style={{ animationDelay: "0.1s" }} suppressHydrationWarning>
             {t("features.description")}
@@ -47,7 +47,6 @@ const FeaturesSection = () => {
                 key={index}
                 className="group p-6 bg-card rounded-2xl border border-border hover:border-primary/30 transition-all duration-500 hover:shadow-lg hover:-translate-y-2 hover:shadow-primary/10 animate-fade-in opacity-0"
                 style={{ animationDelay: `${index * 0.1}s`, animationFillMode: "forwards" }}
-                suppressHydrationWarning
               >
                 <div className="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center mb-5 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg shadow-primary/20">
                   <Icon className="w-7 h-7 text-primary-foreground" />

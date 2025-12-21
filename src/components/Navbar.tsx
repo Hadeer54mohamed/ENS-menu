@@ -4,12 +4,15 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "@/hooks/useLanguage";
+import { useParams } from "next/navigation";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const { t, i18n } = useTranslation();
   const { isRTL } = useLanguage();
+  const params = useParams();
+  const currentLocale = (params?.locale as string) || 'ar';
   
   // Prevent hydration mismatch by waiting for client-side mount
   useEffect(() => {
@@ -67,7 +70,7 @@ const Navbar = () => {
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-4">
             <LanguageSwitcher />
-            <a href="#contact" className="text-foreground/80 hover:text-primary transition-colors font-medium" suppressHydrationWarning>
+            <a href={`/${currentLocale}/login`} className="text-foreground/80 hover:text-primary transition-colors font-medium" suppressHydrationWarning>
               {t("nav.login")}
             </a>
             <Button variant="hero" size="lg" asChild className="hover:scale-105 transition-transform duration-300" suppressHydrationWarning>

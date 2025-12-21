@@ -45,10 +45,10 @@ const ContactSection = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Text Content */}
             <div className={`text-center ${isRTL ? 'lg:text-right' : 'lg:text-left'}`}>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 animate-slide-up" suppressHydrationWarning>
-                {t("contact.title1")}
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 animate-slide-up">
+                <span suppressHydrationWarning>{t("contact.title1")}</span>
                 <br />
-                <span className="text-primary animate-pulse">{t("contact.title2")}</span>
+                <span className="text-primary animate-pulse" suppressHydrationWarning>{t("contact.title2")}</span>
               </h2>
               <p className="text-lg opacity-80 mb-8 animate-slide-up" style={{ animationDelay: "0.1s" }} suppressHydrationWarning>
                 {t("contact.description")}
@@ -84,6 +84,7 @@ const ContactSection = () => {
                     }
                     required
                     className="h-12 text-base transition-all duration-300 focus:scale-[1.02] focus:shadow-lg"
+                    suppressHydrationWarning
                   />
                 </div>
 
@@ -101,6 +102,7 @@ const ContactSection = () => {
                     required
                     className="h-12 text-base transition-all duration-300 focus:scale-[1.02] focus:shadow-lg"
                     dir="ltr"
+                    suppressHydrationWarning
                   />
                 </div>
 

@@ -25,8 +25,8 @@ const PricingSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 animate-slide-up" suppressHydrationWarning>
-            {t("pricing.title")} <span className="text-gradient">{t("pricing.titleHighlight")}</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 animate-slide-up">
+            <span suppressHydrationWarning>{t("pricing.title")}</span> <span className="text-gradient" suppressHydrationWarning>{t("pricing.titleHighlight")}</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: "0.1s" }} suppressHydrationWarning>
             {t("pricing.description")}
@@ -48,7 +48,6 @@ const PricingSection = () => {
                     : "border-border bg-card hover:border-primary/30 hover:shadow-lg"
                 }`}
                 style={{ animationDelay: `${index * 0.15}s`, animationFillMode: "forwards" }}
-                suppressHydrationWarning
               >
                 {/* Popular Badge */}
                 {isPopular && (
@@ -72,18 +71,18 @@ const PricingSection = () => {
                 <h3 className="text-2xl font-bold mb-4" suppressHydrationWarning>{pkg.name}</h3>
 
                 {/* Price */}
-                <div className="mb-6" suppressHydrationWarning>
+                <div className="mb-6">
                   {pkg.originalPrice && (
-                    <span className="text-muted-foreground line-through text-lg ml-2">
+                    <span className="text-muted-foreground line-through text-lg ml-2" suppressHydrationWarning>
                       {pkg.originalPrice} {t("pricing.sar")}
                     </span>
                   )}
                   <div className="flex items-baseline gap-2">
-                    <span className="text-4xl font-bold text-gradient">
+                    <span className="text-4xl font-bold text-gradient" suppressHydrationWarning>
                       {isEnterprise ? t("pricing.contactUs") : pkg.price}
                     </span>
                     {!isEnterprise && pkg.price && (
-                      <span className="text-muted-foreground">{t("pricing.sar")} / {t("pricing.yearly")}</span>
+                      <span className="text-muted-foreground" suppressHydrationWarning>{t("pricing.sar")} / {t("pricing.yearly")}</span>
                     )}
                   </div>
                 </div>
@@ -95,12 +94,11 @@ const PricingSection = () => {
                       key={fIndex} 
                       className="flex items-start gap-3 animate-fade-in opacity-0"
                       style={{ animationDelay: `${(index * 0.15) + (fIndex * 0.05)}s`, animationFillMode: "forwards" }}
-                      suppressHydrationWarning
                     >
                       <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-primary/20 transition-colors">
                         <Check className="w-3 h-3 text-primary" />
                       </div>
-                      <span className="text-foreground/80">{feature}</span>
+                      <span className="text-foreground/80" suppressHydrationWarning>{feature}</span>
                     </li>
                   ))}
                 </ul>

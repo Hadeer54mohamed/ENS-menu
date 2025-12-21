@@ -22,8 +22,8 @@ const HowItWorks = () => {
           <span className="inline-block px-4 py-2 bg-accent text-accent-foreground rounded-full text-sm font-medium mb-4 animate-bounce-in" suppressHydrationWarning>
             {t("howItWorks.badge")}
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 animate-slide-up" suppressHydrationWarning>
-            {t("howItWorks.title")} <span className="text-gradient">{t("howItWorks.titleHighlight")}</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 animate-slide-up">
+            <span suppressHydrationWarning>{t("howItWorks.title")}</span> <span className="text-gradient" suppressHydrationWarning>{t("howItWorks.titleHighlight")}</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto animate-slide-up" style={{ animationDelay: "0.1s" }} suppressHydrationWarning>
             {t("howItWorks.description")}
@@ -39,7 +39,6 @@ const HowItWorks = () => {
                 key={index}
                 className="relative group animate-fade-in opacity-0"
                 style={{ animationDelay: `${index * 0.2}s`, animationFillMode: "forwards" }}
-                suppressHydrationWarning
               >
                 {/* Connector Line */}
                 {index < steps.length - 1 && (
