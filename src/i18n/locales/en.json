@@ -1,0 +1,177 @@
+{
+  "nav": {
+    "features": "Features",
+    "packages": "Packages",
+    "howItWorks": "How It Works",
+    "contact": "Contact Us",
+    "login": "Already a client? Login",
+    "startNow": "Start Now"
+  },
+  "hero": {
+    "title1": "Digital Menu for Ordering",
+    "title2": "and Payment via QR Code",
+    "description": "ENS provides smart digital menu solutions for restaurants and cafés using QR codes, allowing your customers to browse, order, and pay easily — creating a smooth experience that boosts satisfaction and increases sales.",
+    "cta": "Start Now",
+    "subtitle": "Turn your restaurant menu into a fast and easy digital experience",
+    "trust": "No commissions • Fast setup • Continuous support"
+  },
+  "trustedBy": {
+    "title": "Trusted by restaurants and hospitality businesses",
+    "partners": [
+      "Ritz Hotel",
+      "Elite Restaurant",
+      "Lounge Café",
+      "Sultan Restaurants",
+      "Coffee House",
+      "Orient Restaurant",
+      "Café Plus",
+      "Royal Hotel"
+    ]
+  },
+  "features": {
+    "badge": "Our Products",
+    "title": "ENS Digital Menu",
+    "description": "ENS delivers smart QR-based digital menu solutions with ordering and payment features to provide the best possible customer experience.",
+    "cta": "Try the digital menu now",
+    "items": [
+      {
+        "title": "Brand Customization",
+        "description": "Customize colors, logo, and cover design, and connect your digital menu to your social media accounts."
+      },
+      {
+        "title": "Advanced Reports & Analytics",
+        "description": "Get accurate data and reports to understand your business performance and identify growth opportunities."
+      },
+      {
+        "title": "Payment Processing",
+        "description": "Receive orders and payments easily by integrating the digital menu with your POS system."
+      },
+      {
+        "title": "Easy Dashboard",
+        "description": "Manage orders, branches, and real-time updates through a simple and flexible dashboard."
+      },
+      {
+        "title": "Independent Branch Control",
+        "description": "Control each branch separately, manage items, and track sales with ease."
+      },
+      {
+        "title": "Increase Profits",
+        "description": "Reduce reliance on costly delivery apps and receive orders directly with zero commissions."
+      },
+      {
+        "title": "24/7 Support",
+        "description": "Our support team is available around the clock to help whenever you need it."
+      },
+      {
+        "title": "Multi-language Support",
+        "description": "Translate your menu into multiple languages to serve customers from different nationalities."
+      }
+    ]
+  },
+  "whyUs": {
+    "title": "Why choose ENS?",
+    "items": [
+      "Zero commission on orders",
+      "Suitable for all restaurants and cafés",
+      "Simple and user-friendly design",
+      "Instant updates with no extra cost"
+    ]
+  },
+  "howItWorks": {
+    "badge": "How It Works",
+    "title": "Create a Digital Menu with",
+    "titleHighlight": "ENS",
+    "description": "With a few simple steps, you can create an interactive menu that reflects your brand and makes ordering and payment easier for your customers.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Choose a Package",
+        "description": "Create your account and select the package that best fits your business needs."
+      },
+      {
+        "number": "02",
+        "title": "Add Your Items",
+        "description": "Send us your menu and we’ll design a digital interactive menu. You can add or remove items anytime."
+      },
+      {
+        "number": "03",
+        "title": "Share & Receive Orders",
+        "description": "Share the menu with your customers and start receiving orders and payments easily."
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Choose the Right",
+    "titleHighlight": "Package",
+    "description": "Select the package that suits your restaurant needs",
+    "yearly": "Yearly",
+    "sar": "EGP",
+    "contactUs": "Contact Us",
+    "mostPopular": "Most Popular",
+    "save40": "Save 40%",
+    "packages": [
+      {
+        "name": "Basic",
+        "originalPrice": "1700",
+        "price": "1080",
+        "features": [
+          "Dynamic digital menu",
+          "QR code design & website link",
+          "Dashboard with reports",
+          "Multi-language menu",
+          "24/7 support"
+        ],
+        "enterpriseCta": "Select Package"
+      },
+      {
+        "name": "Professional",
+        "originalPrice": "2500",
+        "price": "1370",
+        "features": [
+          "All Basic features",
+          "Table ordering via QR code",
+          "Delivery, pickup & car orders",
+          "Payment processing",
+          "Customer management"
+        ],
+        "enterpriseCta": "Select Package"
+      },
+      {
+        "name": "Enterprise",
+        "originalPrice": "",
+        "price": "",
+        "features": [
+          "Unlimited branches",
+          "Loyalty program",
+          "Custom business domain",
+          "Priority support",
+          "Dedicated account manager"
+        ],
+        "enterpriseCta": "Request a Quote"
+      }
+    ]
+  },
+  "contact": {
+    "title1": "Ready to upgrade",
+    "title2": "your customer experience?",
+    "description": "Book your consultation with ENS and create a digital menu that inspires customers and increases sales.",
+    "whatsapp": "Contact us via WhatsApp",
+    "restaurantName": "Restaurant Name",
+    "restaurantPlaceholder": "Enter restaurant or business name",
+    "phone": "Phone Number",
+    "phonePlaceholder": "01xxxxxxxxx",
+    "submit": "Start Now",
+    "successTitle": "Thank you!",
+    "successDescription": "Your information has been received successfully. We’ll contact you shortly.",
+    "note": "We’ll reach out shortly to understand your restaurant’s needs"
+  },
+  "footer": {
+    "description": "ENS provides smart digital menu solutions for restaurants and cafés using QR codes for a smooth ordering experience.",
+    "quickLinks": "Quick Links",
+    "contactUs": "Contact Us",
+    "location": "Egypt",
+    "copyright": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms & Conditions"
+  }
+}
