@@ -181,5 +181,63 @@
     "noAccount": "ليس لديك حساب؟",
     "createAccount": "أنشئ حساباً جديداً",
     "backToHome": "العودة للصفحة الرئيسية"
-  }
+  },
+    "templates": {
+      "pageTitle": "قوالب المنيو",
+      "pageSubtitle": "اختر القالب المناسب لمطعمك",
+  
+      "logout": "تسجيل الخروج",
+      "logoutSuccess": "تم تسجيل الخروج",
+  
+      "searchPlaceholder": "ابحث عن قالب...",
+  
+      "categories": {
+        "all": "الكل"
+      },
+  
+      "buttons": {
+        "preview": "معاينة",
+        "useTemplate": "استخدم القالب"
+      },
+  
+      "emptyState": {
+        "title": "لا توجد نتائج",
+        "description": "جرب البحث بكلمات مختلفة"
+      },
+  
+      "items": {
+        "fineDining": {
+          "title": "مطعم فاخر",
+          "description": "قالب أنيق للمطاعم الراقية",
+          "category": "مطعم"
+        },
+        "modernCafe": {
+          "title": "كافيه عصري",
+          "description": "تصميم عصري للمقاهي",
+          "category": "كافيه"
+        },
+        "fastFood": {
+          "title": "وجبات سريعة",
+          "description": "قالب مثالي للوجبات السريعة",
+          "category": "وجبات سريعة"
+        },
+        "pizza": {
+          "title": "بيتزا",
+          "description": "تصميم خاص لمطاعم البيتزا",
+          "category": "إيطالي"
+        },
+        "sushi": {
+          "title": "سوشي بار",
+          "description": "قالب أنيق للمطاعم اليابانية",
+          "category": "ياباني"
+        },
+        "bakery": {
+          "title": "مخبز",
+          "description": "تصميم دافئ للمخابز والحلويات",
+          "category": "مخبز"
+        }
+      }
+    }
+  
+  
 }

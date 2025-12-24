@@ -190,5 +190,62 @@
     "noAccount": "Don't have an account?",
     "createAccount": "Create a new account",
     "backToHome": "Back to Home"
-  }
+  },
+    "templates": {
+      "pageTitle": "Menu Templates",
+      "pageSubtitle": "Choose the perfect template for your restaurant",
+  
+      "logout": "Logout",
+      "logoutSuccess": "Logged out successfully",
+  
+      "searchPlaceholder": "Search templates...",
+  
+      "categories": {
+        "all": "All"
+      },
+  
+      "buttons": {
+        "preview": "Preview",
+        "useTemplate": "Use Template"
+      },
+  
+      "emptyState": {
+        "title": "No templates found",
+        "description": "Try searching with different keywords"
+      },
+  
+      "items": {
+        "fineDining": {
+          "title": "Fine Dining",
+          "description": "Elegant template for upscale restaurants",
+          "category": "Restaurant"
+        },
+        "modernCafe": {
+          "title": "Modern Café",
+          "description": "Contemporary design for cafés",
+          "category": "Café"
+        },
+        "fastFood": {
+          "title": "Fast Food",
+          "description": "Perfect template for fast food",
+          "category": "Fast Food"
+        },
+        "pizza": {
+          "title": "Pizza Place",
+          "description": "Special design for pizza restaurants",
+          "category": "Italian"
+        },
+        "sushi": {
+          "title": "Sushi Bar",
+          "description": "Elegant template for Japanese cuisine",
+          "category": "Japanese"
+        },
+        "bakery": {
+          "title": "Bakery",
+          "description": "Warm design for bakeries and pastries",
+          "category": "Bakery"
+        }
+      }
+    }
+    
 }

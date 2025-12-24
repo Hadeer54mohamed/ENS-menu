@@ -2,101 +2,125 @@
 
 import { useState, useEffect, use } from "react";
 import { useTranslation } from "react-i18next";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
-import { ArrowLeft, ArrowRight, Mail, Lock } from "lucide-react";
+import { ArrowLeft, ArrowRight, Mail, Lock, Eye, EyeOff } from "lucide-react";
 import { useLanguage } from "@/hooks/useLanguage";
-import { Eye, EyeOff } from "lucide-react";
+import { toast } from "sonner";
+import { motion } from "framer-motion";
 
 export default function LoginPage({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
+  const { locale } = use(params);
   const { t, i18n } = useTranslation();
   const { isRTL } = useLanguage();
+  const router = useRouter();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [isReady, setIsReady] = useState(false);
-  
-  const { locale } = use(params);
 
   const ArrowIcon = isRTL ? ArrowRight : ArrowLeft;
-  const currentLogo =
-    isMounted && i18n.language === "ar" ? "/ENS-AR.png" : "/ENS-EN.png";
+  const currentLogo = i18n.language === "ar" ? "/ENS-AR.png" : "/ENS-EN.png";
 
+  /* Language Init */
   useEffect(() => {
-    const initLanguage = async () => {
-      if (locale && (locale === 'ar' || locale === 'en') && i18n.language !== locale) {
-        await i18n.changeLanguage(locale);
-      }
-      setIsMounted(true);
-      setIsReady(true);
-    };
-    
-    initLanguage();
+    if (locale && locale !== i18n.language) {
+      i18n.changeLanguage(locale);
+    }
+    setIsReady(true);
   }, [locale, i18n]);
+
+  /* Remember Me */
+  useEffect(() => {
+    const savedEmail = localStorage.getItem("rememberEmail");
+    if (savedEmail) {
+      setEmail(savedEmail);
+      setRememberMe(true);
+    }
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Login attempt:", { email, password, rememberMe });
+    setIsLoading(true);
+
+    setTimeout(() => {
+      if (!email || !password) {
+        toast.error(
+          i18n.language === "ar"
+            ? "يرجى ملء جميع الحقول"
+            : "Please fill all fields"
+        );
+        setIsLoading(false);
+        return;
+      }
+
+      if (rememberMe) {
+        localStorage.setItem("rememberEmail", email);
+      } else {
+        localStorage.removeItem("rememberEmail");
+      }
+
+      localStorage.setItem("isLoggedIn", "true");
+      toast.success(t("login.loginButton"));
+      router.push(`/${locale}`);
+    }, 900);
   };
 
-  if (!isReady) {
-    return null;
-  }
+  if (!isReady) return null;
 
   return (
     <main className="min-h-screen bg-gradient-hero relative overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {/* Ambient Background */}
+      <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse-slow" />
-        <div
-          className="absolute bottom-20 left-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse-slow"
-          style={{ animationDelay: "1s" }}
-        />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl animate-spin-slow" />
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse-slow delay-1000" />
       </div>
 
-      <div className="container mx-auto px-4 py-8 relative z-10">
-        {/* Back to Home */}
+      <div className="container mx-auto px-4 py-10 relative z-10">
+        {/* Back */}
         <a
           href={`/${locale}`}
-          className="inline-flex items-center gap-2 text-foreground/70 hover:text-primary transition-colors mb-8 group"
-          suppressHydrationWarning
+          className="inline-flex items-center gap-2 text-foreground/70 hover:text-primary transition mb-8 group"
         >
           <ArrowIcon
-            className={`w-5 h-5 transition-transform duration-300 ${
-              isRTL ? "group-hover:translate-x-1" : "group-hover:-translate-x-1"
+            className={`w-5 h-5 transition-transform ${
+              isRTL
+                ? "group-hover:translate-x-1"
+                : "group-hover:-translate-x-1"
             }`}
           />
           {t("login.backToHome")}
         </a>
 
-        {/* Login Card */}
-        <div className="max-w-md mx-auto">
-          <div className="bg-background/80 backdrop-blur-md border border-border rounded-2xl shadow-2xl p-8 md:p-10">
+        {/* Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="max-w-md mx-auto"
+        >
+          <div className="bg-background/80 backdrop-blur-xl border border-border rounded-2xl shadow-2xl p-8 md:p-10">
             {/* Logo */}
             <div className="flex justify-center mb-6">
-              <img
-                src={currentLogo}
-                alt="ENS Logo"
-                className="h-16 w-auto"
-                suppressHydrationWarning
-              />
+              <img src={currentLogo} alt="ENS Logo" className="h-16" />
             </div>
 
             {/* Title */}
             <div className="text-center mb-8">
-              <h1 className="text-3xl font-bold mb-2" suppressHydrationWarning>
+              <h1 className="text-3xl font-bold mb-2">
                 {t("login.title")}
               </h1>
-              <p className="text-muted-foreground" suppressHydrationWarning>
+              <p className="text-muted-foreground">
                 {t("login.subtitle")}
               </p>
             </div>
@@ -105,124 +129,98 @@ export default function LoginPage({
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Email */}
               <div className="space-y-2">
-                <Label
-                  htmlFor="email"
-                  className="flex items-center gap-2"
-                  suppressHydrationWarning
-                >
+                <Label className="flex gap-2 items-center">
                   <Mail className="w-4 h-4 text-primary" />
                   {t("login.email")}
                 </Label>
                 <Input
-                  id="email"
                   type="email"
                   placeholder={t("login.emailPlaceholder")}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  required
                   className="h-12"
-                  suppressHydrationWarning
                 />
               </div>
 
               {/* Password */}
-              <div className="relative space-y-2">
-                <Label
-                  htmlFor="password"
-                  className="flex items-center gap-2"
-                  suppressHydrationWarning
-                >
+              <div className="space-y-2">
+                <Label className="flex gap-2 items-center">
                   <Lock className="w-4 h-4 text-primary" />
                   {t("login.password")}
                 </Label>
-                <Input
-                  id="password"
-                  type={showPassword ? "text" : "password"}
-                  placeholder={t("login.passwordPlaceholder")}
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                  className="h-12 pr-10" 
-                  suppressHydrationWarning
-                />
-                <button
-                  type="button"
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-primary transition-colors"
-                  onClick={() => setShowPassword(!showPassword)}
-                  aria-label={showPassword ? "Hide password" : "Show password"}
-                >
-                  {showPassword ? (
-                    <EyeOff className="w-4 h-4" />
-                  ) : (
-                    <Eye className="w-4 h-4" />
-                  )}
-                </button>
+                <div className="relative">
+                  <Input
+                    type={showPassword ? "text" : "password"}
+                    placeholder={t("login.passwordPlaceholder")}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="h-12 pr-10"
+                  />
+                  <button
+                    type="button"
+                    aria-pressed={showPassword}
+                    aria-label={
+                      showPassword
+                        ? t("login.hidePassword")
+                        : t("login.showPassword")
+                    }
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-primary"
+                  >
+                    {showPassword ? (
+                      <EyeOff className="w-5 h-5" />
+                    ) : (
+                      <Eye className="w-5 h-5" />
+                    )}
+                  </button>
+                </div>
               </div>
 
-              {/* Remember Me & Forgot Password */}
+              {/* Remember */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <Checkbox
-                    id="remember"
                     checked={rememberMe}
-                    onCheckedChange={(checked) =>
-                      setRememberMe(checked as boolean)
-                    }
+                    onCheckedChange={(v) => setRememberMe(!!v)}
                   />
-                  <Label
-                    htmlFor="remember"
-                    className="text-sm cursor-pointer"
-                    suppressHydrationWarning
-                  >
+                  <Label className="text-sm cursor-pointer">
                     {t("login.rememberMe")}
                   </Label>
                 </div>
-                <a
-                  href="#"
-                  className="text-sm text-primary hover:underline"
-                  suppressHydrationWarning
-                >
+
+                <a className="text-sm text-primary hover:underline">
                   {t("login.forgotPassword")}
                 </a>
               </div>
 
-              {/* Submit Button */}
+              {/* Submit */}
               <Button
                 type="submit"
                 variant="hero"
                 size="lg"
-                className="w-full h-12 text-lg hover:scale-105 transition-transform duration-300"
-                suppressHydrationWarning
+                disabled={isLoading}
+                className="w-full h-12 text-lg transition hover:scale-[1.03]"
               >
-                {t("login.loginButton")}
+                {isLoading ? (
+                  <span className="w-5 h-5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
+                ) : (
+                  t("login.loginButton")
+                )}
               </Button>
             </form>
 
-            {/* Create Account */}
-            <div className="mt-8 text-center">
-              <p
-                className="text-sm text-muted-foreground mb-3"
-                suppressHydrationWarning
-              >
-                {t("login.noAccount")}
-              </p>
+            {/* Footer */}
+            <div className="mt-8 text-center text-sm text-muted-foreground">
+              {t("login.noAccount")}{" "}
               <a
                 href={`/${locale}#contact`}
-                className="text-primary hover:underline font-medium"
-                suppressHydrationWarning
+                className="text-primary font-medium hover:underline"
               >
                 {t("login.createAccount")}
               </a>
             </div>
           </div>
-
-          {/* Additional Info */}
-          <div className="text-center mt-6 text-sm text-muted-foreground">
-            <p suppressHydrationWarning>
-              {t("footer.privacy")} • {t("footer.terms")}
-            </p>
-          </div>
-        </div>
+        </motion.div>
       </div>
     </main>
   );
