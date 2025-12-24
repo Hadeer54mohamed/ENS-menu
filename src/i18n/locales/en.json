@@ -109,7 +109,7 @@
     "titleHighlight": "Package",
     "description": "Select the package that suits your restaurant needs",
     "yearly": "Yearly",
-    "sar": "EGP",
+    "egp": "EGP",
     "contactUs": "Contact Us",
     "mostPopular": "Most Popular",
     "save40": "Save 40%",

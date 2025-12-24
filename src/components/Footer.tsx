@@ -82,10 +82,10 @@ const Footer = () => {
               <li className="flex items-center gap-3 group">
                 <Mail className="w-5 h-5 text-primary transition-transform duration-300 group-hover:scale-110" />
                 <a
-                  href="mailto:info@ens.sa"
+                  href="mailto:info@ens.com"
                   className="text-secondary-foreground/70 hover:text-primary transition-colors"
                 >
-                  info@ens.sa
+                  info@ens.com
                 </a>
               </li>
               <li className="flex items-start gap-3 group">

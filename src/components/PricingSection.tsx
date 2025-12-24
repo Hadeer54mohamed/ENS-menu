@@ -74,7 +74,7 @@ const PricingSection = () => {
                 <div className="mb-6">
                   {pkg.originalPrice && (
                     <span className="text-muted-foreground line-through text-lg ml-2" suppressHydrationWarning>
-                      {pkg.originalPrice} {t("pricing.sar")}
+                      {pkg.originalPrice} {t("pricing.egp")}
                     </span>
                   )}
                   <div className="flex items-baseline gap-2">
@@ -82,7 +82,7 @@ const PricingSection = () => {
                       {isEnterprise ? t("pricing.contactUs") : pkg.price}
                     </span>
                     {!isEnterprise && pkg.price && (
-                      <span className="text-muted-foreground" suppressHydrationWarning>{t("pricing.sar")} / {t("pricing.yearly")}</span>
+                      <span className="text-muted-foreground" suppressHydrationWarning>{t("pricing.egp")} / {t("pricing.yearly")}</span>
                     )}
                   </div>
                 </div>

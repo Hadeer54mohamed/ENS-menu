@@ -56,7 +56,7 @@ const ContactSection = () => {
               
               {/* WhatsApp Button */}
               <a
-                href="https://wa.me/966555482808"
+                href="https://wa.me/01000000000"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-6 py-3 bg-green-500 hover:bg-green-600 rounded-xl transition-all duration-300 font-semibold hover:scale-105 shadow-lg hover:shadow-green-500/30 animate-slide-up"
