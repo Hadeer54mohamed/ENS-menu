@@ -1,5 +1,6 @@
 {
   "nav": {
+    "templates": "Templates",
     "features": "Features",
     "packages": "Packages",
     "howItWorks": "How It Works",

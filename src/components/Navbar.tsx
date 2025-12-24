@@ -27,6 +27,7 @@ const Navbar = () => {
     { href: "#packages", label: t("nav.packages") },
     { href: "#how-it-works", label: t("nav.howItWorks") },
     { href: "#contact", label: t("nav.contact") },
+    { href: "/Templates", label: t("nav.templates") },
   ];
 
   return (
